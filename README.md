@@ -5,12 +5,11 @@ Facilitates pass-thru NTLM auth via IIS reverse proxy site -> Flask API.  This a
 
 IIS is configured as a reverse proxy pointing at the Flask-powered API provided by the Windows Service.  IIS is configured to require authentication, and only allow NTLM for authentication.  The NTLM host headers are
 forwarded to the Flask API, where the domain samAccountName is decoded using the publicly available NTLM
-schema, which is then used for an AD query to verify group membership for a given group.
+schema, which can then used for an AD query to verify group membership for a given group (please see my alternate repo 'AD Query Service').  
 
 ## Why?
 
-Using this mechanism, it's possible to make JSONP calls from a web browser to verify AD group membership.  
-Giving websites the power to verify and use local windows domain account information facilitates pass-through auth projects without resorting to alternate Microsoft web design tools.
+Using this mechanism, it's possible to make JSONP calls from a web browser to find a local windows user/domain/pc hostname.  Giving websites the power to use local windows domain account information facilitates pass-through auth projects without resorting to alternate Microsoft web design tools.
 
 ## __To compile python -> service .exe__
 ```
