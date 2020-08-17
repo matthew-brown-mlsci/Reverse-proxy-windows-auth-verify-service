@@ -54,7 +54,7 @@ cd "c:\scripts\Reverse proxy windows auth verify service"
 ## __Testing:__
 + Endpoint:
 ```
-curl -s "http://localhost:9994/getWinAuthInfo"
+curl -s "http://localhost:9995/getWinAuthInfo"
 ```
 
 
